@@ -19,7 +19,9 @@ class CAR {
 			minFuel = 0;
 			
 		}
-		CAR(float fuelCAPACITY,float currentFuelLEVEL,float fuelEFFICIENCY,float MinFuel){
+		CAR(string Model, string Brand, float fuelCAPACITY,float currentFuelLEVEL,float fuelEFFICIENCY,float MinFuel){
+			model = Model;
+			brand = Brand;
 			fuelCapacity = fuelCAPACITY;
 			currentFuelLevel =currentFuelLEVEL;
 			 fuelEfficiency = fuelEFFICIENCY;
@@ -73,7 +75,7 @@ class CAR {
 
 int main() {
 
-	CAR car(1000,60,40,100);
+	CAR car("BUGGATI","CHIRON",1000,60,40,100);
 	car.drive(800);
 	car.refuel(40);
 	car.fuelStatus();
