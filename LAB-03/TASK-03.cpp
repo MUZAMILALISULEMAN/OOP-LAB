@@ -6,9 +6,13 @@ class Library {
 		string borrowedBooks[100];
 		string students[100];
 		int availableBooks[100];
-		int books = 0;
-		int borrowedBooksCount = 0;
+		int books;
+		int borrowedBooksCount;
 	public:
+		Library(){
+			books = 0;
+			borrowedBooksCount = 0;
+		}
 		void addBook(string bookName) {
 			bookList[books] = bookName;
 			availableBooks[books] = 1;
