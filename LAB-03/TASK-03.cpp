@@ -14,14 +14,18 @@ class Library {
 			borrowedBooksCount = 0;
 		}
 		void addBook(string bookName) {
+			if(books< 100){
 			bookList[books] = bookName;
 			availableBooks[books] = 1;
 			books++;
 			cout<<"BOOK ADDED!"<<endl;
+			}else{
+				cout<<endl<<"UNNABLE TO ADD!"<<endl;
+			}
 		}
 		void lendBook(string bookName,string studentName) {
 			for(int i=0; i<books; i++) {
-				if(bookList[i] == bookName && availableBooks[i] == 1) {
+				if(bookList[i] == bookName && availableBooks[i] == 1 && borrowedBooksCount < 100) {
 					cout<<"BOOK ISSUED TO "<<studentName<<endl;
 					availableBooks[i] = 0;
 					students[borrowedBooksCount] = studentName;
