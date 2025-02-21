@@ -7,11 +7,12 @@ class Car
 	string model;
 	double price;
 	bool availabilityStatus;
+	double totalRevenue;
 
 public:
 	Car()
 	{
-
+		totalRevenue = 0.0;
 		brand = "Unknown";
 		model = "Generic";
 		price = 0.0;
@@ -23,8 +24,20 @@ public:
 		model = m;
 		price = p;
 		availabilityStatus = a;
+		totalRevenue = 0;
 	}
+	Car(const Car &carGiven)
+	{
 
+		this->brand = carGiven.brand;
+		this->model = carGiven.model;
+		this->price = carGiven.price;
+		this->availabilityStatus = carGiven.availabilityStatus;
+	}
+	~Car()
+	{
+		cout << "CAR IS REMOVED FROM THE MEMORY" << endl;
+	}
 	void setBrand(string b)
 	{
 		brand = b;
@@ -62,7 +75,6 @@ public:
 	{
 		if (checkAvailability() == true)
 		{
-
 			cout << "CAR IS RENTED" << endl;
 			availabilityStatus = false;
 			applyDiscount(DAYS);
@@ -72,25 +84,25 @@ public:
 
 			cout << "CAR IS NOT AVAILABLE" << endl;
 		}
-	}
-	Car(const Car &carGiven)
+	};
+	void totalRevenueCalc(int DAYS)
 	{
 
-		this->brand = carGiven.brand;
-		this->model = carGiven.model;
-		this->price = carGiven.price;
-		this->availabilityStatus = carGiven.availabilityStatus;
+		applyDiscount(DAYS);
+		this->totalRevenue = DAYS * price;
 	}
-	~Car()
+	void displayRevenue()
 	{
-		cout << "CAR IS REMOVED FROM THE MEMORY" << endl;
+		cout << "TOTAL REVENUE: " << totalRevenue << endl;
 	}
 };
+
 int main()
 {
 
-	Car c1("BMW", "KL-03", 19000, true);
-	Car c2 = c1;
+	Car Civic("CIVIC", "HONDA", 15000, true);
+	Civic.totalRevenueCalc(13);
+	Civic.displayRevenue();
 
 	return 0;
 }

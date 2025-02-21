@@ -35,14 +35,16 @@ class Car{
 		
 			
 		}
-		void rentCar(string name){
+		void rentCar(){
 			if(checkAvailability() == true){
 				
-				cout<<"CAR IS RENTED TO THE "<<name<<endl;
-				
+				cout<<"CAR IS RENTED"<<endl;
+				availabilityStatus = false;
 			}else{
 				
-			cout<<"CAR IS NOT AVAILABLE"<<endl;			}
+			cout<<"CAR IS NOT AVAILABLE"<<endl;
+			
+			}
 		}
 		void display(){
 		
@@ -57,11 +59,12 @@ class Car{
 };
 int main(){
 	
-	Car c;
-	c.rentCar("MUZAMIL");
-	c.setAvailability(false);
-	c.rentCar("MUZAMIL");
-	c.display();
+	Car BMW;
+	BMW.setBrand("BMW");
+	BMW.setModel("56K-LK");
+	BMW.setPrice(56000);
+	BMW.rentCar();
+	cout<<endl<<BMW.checkAvailability();
 	
 	
 	return 0;
