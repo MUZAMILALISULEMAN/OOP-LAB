@@ -154,6 +154,10 @@ public:
 };
 
 int main() {
+
+    cout<<"NAME: MUZAMIL ALI"<<endl;
+    cout<<"ROLL NO: 24K-1023"<<endl;
+
     RentalSystem GARAGESLOT;
 
     GARAGESLOT.registerUser(25, 0, "123-456-7890", "INTERMEDIATE");

@@ -58,7 +58,7 @@ public:
         }
         else
         {
-            cout << "INVALID DIRECTION";
+            cout << "INVALID DIRECTION"<<endl;
         }
         return;
     }
@@ -109,13 +109,14 @@ public:
 class Goal
 {
     
-    public:
     int x, y;
+    public:
     Goal() : x(3), y(3) {}
     bool isGoalReached(int BallX, int BallY)
     {
         if (x == BallX && y == BallY)
         {
+            cout<<"GOAL REACHED!"<<endl;
             return true;
         }
         return false;
@@ -157,8 +158,7 @@ public:
     void play(Team *team)
     {
 
-        ball.setBallX(0);
-        ball.setBallY(0);
+       ball.move(0,0);
         do
         {
 
@@ -166,6 +166,7 @@ public:
             string direction;
             cin >> direction;
             team->getPlayer()->hitBall(ball.refgetX(), ball.refgetY(), direction);
+            cout<<"BALL POSITION: (" <<get<0>(ball.getPosition())<<","<<get<1>(ball.getPosition())<<")"<<endl;
 
         } while (!goal.isGoalReached(ball.getX(), ball.getY()));
     }
@@ -174,11 +175,11 @@ public:
 
         if (teamOne->getPlayer()->getHits() < teamTwo->getPlayer()->getHits())
         {
-            cout << teamOne->teamName << "IS THE WINNER";
+            cout << teamOne->teamName << " IS THE WINNER";
         }
         else if (teamOne->getPlayer()->getHits() > teamTwo->getPlayer()->getHits())
         {
-            cout << teamTwo->teamName << "IS THE WINNER";
+            cout << teamTwo->teamName << " IS THE WINNER";
         }
         else
         {
@@ -187,7 +188,8 @@ public:
     }
     void StartGame()
     {
-
+        cout<<"NAME: MUZAMIL ALI"<<endl;
+        cout<<"ROLL NO: 24K-1023"<<endl;
         cout << "TEAM ONE NAME: ";
         cin >> teamOne->teamName;
         cout << "TEAM TWO NAME: ";
@@ -203,6 +205,7 @@ public:
 
 int main()
 {
+    
     Team teamOne;
     Team teamTwo;
 

@@ -179,7 +179,8 @@ void Mentor::provideGuidance() {
 
 
 int main() {
-    
+    cout<<"NAME: MUZAMIL ALI"<<endl;
+    cout<<"ROLL NO: 24K-1023"<<endl;
     Mentor mentor(1, 2, "ALI");
     Learner l1(12, 18, "MUZAMIL");
     Learner l2(13, 18, "MUZZY");
