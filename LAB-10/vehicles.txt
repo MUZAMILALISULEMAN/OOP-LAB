@@ -1,0 +1,4 @@
+AutonomousCar,AC101,RojoTax1,2023, SW: 4.5, CERT-AL
+Electricvehicle, Ev262, Jolt, 2022, Battery 158, CERT-ECO
+
+HvbridTruck.HT383. GreerHauler. 2021. Cargo: 5000| Battery: 75. CERT-HYBRID
